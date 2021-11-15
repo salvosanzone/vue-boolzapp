@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*body*/
+body{
+  font-family: 'Roboto', sans-serif;
+}
 /*general*/
 .clearfix::after {
   content: "";
@@ -48,8 +52,37 @@
   height: 150px;
 }
 .user-name {
-  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
   background-color: #eaeae9;
+}
+.image-user{
+  float: left;
+  width: 12%;
+  margin-right: 5px;
+
+
+}
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.detalis{
+  display: flex;
+  justify-content: space-between;
+  float: left;
+  width: 88%;
+}
+.shortcut{
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+}
+i{
+  color: #B1B0B1;
+  cursor: pointer;
 }
 .notifications {
   height: 50px;

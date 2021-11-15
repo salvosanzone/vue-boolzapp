@@ -11,6 +11,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
@@ -21,12 +27,29 @@
       <div class="bottom-app"></div>
       <!--WRAPPER-->
       <div class="wrapper">
-
         <!--LEFT WRAPPER-->
         <div class="left-wrapper">
           <!--TOP LEFT WRAPPER-->
           <div class="top-left-wrapper">
-            <div class="user-name">nome utente</div>
+            <div class="user-name clearfix">
+              <div class="image-user">
+                <img src="img/avatar_io.jpg" alt="" />
+              </div>
+              <div class="detalis">
+                <div class="name-detalis">
+                  <h6>
+                    <strong>
+                      Nome Utente
+                    </strong>
+                  </h6>
+                </div>
+                <div class="shortcut">
+                  <i class="fas fa-circle-notch"></i>
+                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </div>
+              </div>
+            </div>
             <div class="notifications">notifiche messaggi</div>
             <div class="input">
               <div class="left-input">search</div>
@@ -39,46 +62,36 @@
           <div class="bottom-left-wrapper">
             <div class="container-user">
               <div class="user">
-              <div class="left-user">left</div>
-              <div class="right-user">
-                <div class="top-right-user clearfix">
-                  <div class="name">michele</div>
-                  <div class="date">14/09/1991</div>
-                </div>
-                <div class="bottom-right-user">
-                  <p>ciao come stai</p>
+                <div class="left-user">left</div>
+                <div class="right-user">
+                  <div class="top-right-user clearfix">
+                    <div class="name">michele</div>
+                    <div class="date">14/09/1991</div>
+                  </div>
+                  <div class="bottom-right-user">
+                    <p>ciao come stai</p>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
-            
           </div>
           <!--/BOTTOM LEFT WRAPPER-->
         </div>
         <!--/LEFT WRAPPER-->
 
-
         <!--RIGHT WRAPPER-->
         <div class="right-wrapper">
-          <div class="top-right-wrapper">
-            top
-          </div>
+          <div class="top-right-wrapper">top</div>
           <div class="center-right-wrapper">
             <div class="chat">chat</div>
           </div>
-          <div class="bottom-right-wrapper">
-            bottom
-          </div>
+          <div class="bottom-right-wrapper">bottom</div>
         </div>
         <!--/RIGHT WRAPPER-->
-        
       </div>
       <!--/WRAPPER-->
-
-
     </div>
     <!--/APP-->
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
