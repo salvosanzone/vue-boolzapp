@@ -67,7 +67,9 @@ img {
   height: 100%;
   border-radius: 50%;
 }
-.detalis {
+.detalis,
+.detalis-right-wrapper
+ {
   display: flex;
   justify-content: space-between;
   float: left;
@@ -149,8 +151,10 @@ i {
 .user {
   display: flex;
   padding: 8px 12px;
-  background-color: #E8EAEB;
 
+}
+.user.active{
+  background-color: #E8EAEB;
 }
 .left-user {
   width: 13%;
@@ -164,6 +168,10 @@ i {
   float: left;
   
 }
+.color-p{
+  font-size: 10px;
+  color: gray;
+}
 .date {
   float: right;
 }
@@ -174,15 +182,14 @@ i {
 }
 
 .top-right-wrapper {
+  display: flex;
+  justify-content: space-between;
   height: 50px;
   background-color: #e9e9ea;
   border-left: 1px solid #dddddd;
+  padding: 5px;
 }
-.color-p{
-  font-size: 10px;
-  color: gray;
 
-}
 
 .center-right-wrapper {
   background-color: #f9f9fa;

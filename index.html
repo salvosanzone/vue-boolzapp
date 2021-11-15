@@ -75,15 +75,17 @@
           <!--BOTTOM LEFT WRAPPER-->
           <div class="bottom-left-wrapper">
             <div class="container-user">
-              <div class="user">
+              <div
+                v-for="(contact,index) in contacts"
+               class="user ">
                 <div class="left-user">
-                  <img src="img/avatar_1.jpg" alt="">
+                  <img :src="contact.immagine" alt="">
                 </div>
                 <div class="right-user">
                   <div class="top-right-user clearfix">
                     <div class="name">
                       <h6>
-                        Michele
+                        {{contact.nome}}
                       </h6>
                     </div>
                     <div class="date">
@@ -107,11 +109,23 @@
 
         <!--RIGHT WRAPPER-->
         <div class="right-wrapper">
-          <div class="top-right-wrapper">top</div>
+          <div class="top-right-wrapper">
+            
+          </div>
           <div class="center-right-wrapper">
             <div class="chat">chat</div>
           </div>
-          <div class="bottom-right-wrapper">bottom</div>
+          <div class="bottom-right-wrapper">
+            <div class="left-bottom-right-wrapper">
+              left
+            </div>
+            <div class="center-bottom-right-wrapper">
+              center
+            </div>
+            <div class="right-bottom-right-wrapper">
+              right
+            </div>
+          </div>
         </div>
         <!--/RIGHT WRAPPER-->
       </div>
