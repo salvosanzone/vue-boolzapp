@@ -1,5 +1,5 @@
 /*reset*/
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,23 +12,23 @@
 }
 
 /*app*/
-#app{
+#app {
   height: 100vh;
 }
 
-.top-app{
+.top-app {
   position: relative;
   height: 90px;
   background-color: #249687;
 }
 
-.bottom-app{
+.bottom-app {
   height: calc(100% - 90px);
-  background-color: #D4DBD9;
+  background-color: #d4dbd9;
 }
 
 /*wrapper*/
-.wrapper{
+.wrapper {
   display: flex;
   position: absolute;
   top: 50%;
@@ -36,67 +36,79 @@
   transform: translate(-50%, -50%);
   width: 85%;
   height: 630px;
-  background-color:#E9EAEA;
+  background-color: #e9eaea;
 }
 /*left-wrapper*/
-.left-wrapper{
+.left-wrapper {
   width: 30%;
   border: 1px solid black;
 }
 /*top-left-wrapper*/
-.top-left-wrapper{
+.top-left-wrapper {
   height: 150px;
-  
 }
-
-.user-name{
+.user-name {
   height: 50px;
-  background-color: #EAEAE9;
+  background-color: #eaeae9;
 }
-.notifications{
+.notifications {
   height: 50px;
   background-color: crimson;
 }
-.input{
+.input {
   display: flex;
   height: calc(100% - 100px);
 }
-.left-input{
+.left-input {
   width: 20%;
   border: 1px solid black;
 }
-.right-input{
+.right-input {
   width: 80%;
 }
 /*bottom-left-wrapper*/
-.bottom-left-wrapper{
+.bottom-left-wrapper {
   height: calc(100% - 150px);
   background-color: cornflowerblue;
 }
-.user{
+.user {
   display: flex;
   height: 70px;
   background-color: darkblue;
 }
-.left-user{
+.left-user {
   width: 30%;
   background-color: darkgoldenrod;
 }
-.right-user{
+.right-user {
   width: 70%;
   background-color: darkseagreen;
 }
-.name{
+.name {
   float: left;
   background-color: forestgreen;
 }
-.date{
+.date {
   float: right;
   background-color: gainsboro;
 }
 
 /*right-wrapper*/
-.right-wrapper{
+.right-wrapper {
   width: 70%;
   border: 1px solid black;
+}
+
+.top-right-wrapper {
+  height: 50px;
+  background-color: gold;
+}
+
+.center-right-wrapper {
+  height: calc(100% - 100px);
+}
+
+.bottom-right-wrapper {
+  height: 50px;
+  background-color: gold;
 }
