@@ -113,16 +113,26 @@ i{
   text-decoration: underline;
 }
 .input {
+  padding: 6px;
   display: flex;
-  height: calc(100% - 100px);
+  background-color: #FAF9FA;
 }
 .left-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20%;
-  border: 1px solid black;
+  background-color: white;
 }
 .right-input {
   width: 80%;
 }
+.right-input input{
+  width: 100%;
+  border: none;
+  padding-top: 3px;
+}
+
 /*bottom-left-wrapper*/
 .bottom-left-wrapper {
   height: calc(100% - 150px);
