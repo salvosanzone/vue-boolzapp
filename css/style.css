@@ -24,7 +24,8 @@
 
 .bottom-app {
   height: calc(100% - 90px);
-  background-color: #d4dbd9;
+  background-color: #dcdbd2;
+  background-image: linear-gradient(#dcdbd2, #d3dbda);
 }
 
 /*wrapper*/
@@ -41,7 +42,6 @@
 /*left-wrapper*/
 .left-wrapper {
   width: 30%;
-  border: 1px solid black;
 }
 /*top-left-wrapper*/
 .top-left-wrapper {
@@ -69,12 +69,18 @@
 /*bottom-left-wrapper*/
 .bottom-left-wrapper {
   height: calc(100% - 150px);
-  background-color: cornflowerblue;
+  background-color: #f9f9f9;
+}
+.container-user {
+  width: 97%;
+  height: 100%;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ebeaeb;
 }
 .user {
   display: flex;
+
   height: 70px;
-  background-color: darkblue;
 }
 .left-user {
   width: 30%;
@@ -96,19 +102,25 @@
 /*right-wrapper*/
 .right-wrapper {
   width: 70%;
-  border: 1px solid black;
 }
 
 .top-right-wrapper {
   height: 50px;
-  background-color: gold;
+  background-color: #e9e9ea;
+  border-left: 1px solid #dddddd;
 }
 
 .center-right-wrapper {
+  background-color: #F9F9FA;
   height: calc(100% - 100px);
+}
+.chat {
+  width: 98.8%;
+  height: 100%;
+  background-image: url(../img/mine.jpg);
 }
 
 .bottom-right-wrapper {
   height: 50px;
-  background-color: gold;
+  background-color: #e9e9ea;
 }
