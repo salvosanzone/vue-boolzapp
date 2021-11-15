@@ -55,7 +55,6 @@ body{
   display: flex;
   align-items: center;
   padding: 5px;
-  background-color: #eaeae9;
 }
 .image-user{
   float: left;
@@ -85,8 +84,33 @@ i{
   cursor: pointer;
 }
 .notifications {
-  height: 50px;
-  background-color: crimson;
+  display: flex;
+  background-color: #8DDAFB;
+  padding: 10px;
+;
+}
+.left-notifications{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+.left-notifications i{
+  color: #8DDAFB;
+}
+.right-notifications{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.right-notifications p{
+  font-size: 10px;
+  color: #568094;
+  text-decoration: underline;
 }
 .input {
   display: flex;
