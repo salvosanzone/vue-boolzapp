@@ -1,0 +1,33 @@
+/*reset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*app*/
+#app{
+  height: 100vh;
+}
+
+.top-app{
+  position: relative;
+  height: 90px;
+  background-color: #249687;
+}
+
+.bottom-app{
+  height: calc(100% - 90px);
+  background-color: #D4DBD9;
+}
+
+/*wrapper*/
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 630px;
+  background-color:darkcyan;
+}
