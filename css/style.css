@@ -4,6 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*general*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 /*app*/
 #app{
@@ -23,11 +29,74 @@
 
 /*wrapper*/
 .wrapper{
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 85%;
   height: 630px;
-  background-color:darkcyan;
+  background-color:#E9EAEA;
+}
+/*left-wrapper*/
+.left-wrapper{
+  width: 30%;
+  border: 1px solid black;
+}
+/*top-left-wrapper*/
+.top-left-wrapper{
+  height: 150px;
+  
+}
+
+.user-name{
+  height: 50px;
+  background-color: #EAEAE9;
+}
+.notifications{
+  height: 50px;
+  background-color: crimson;
+}
+.input{
+  display: flex;
+  height: calc(100% - 100px);
+}
+.left-input{
+  width: 20%;
+  border: 1px solid black;
+}
+.right-input{
+  width: 80%;
+}
+/*bottom-left-wrapper*/
+.bottom-left-wrapper{
+  height: calc(100% - 150px);
+  background-color: cornflowerblue;
+}
+.user{
+  display: flex;
+  height: 70px;
+  background-color: darkblue;
+}
+.left-user{
+  width: 30%;
+  background-color: darkgoldenrod;
+}
+.right-user{
+  width: 70%;
+  background-color: darkseagreen;
+}
+.name{
+  float: left;
+  background-color: forestgreen;
+}
+.date{
+  float: right;
+  background-color: gainsboro;
+}
+
+/*right-wrapper*/
+.right-wrapper{
+  width: 70%;
+  border: 1px solid black;
 }

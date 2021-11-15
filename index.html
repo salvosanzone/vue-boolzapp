@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
-</head>
-<body>
-  
-  <div id="app">
-    <div class="top-app"></div>
-    <div class="bottom-app"></div>
-    <div class="wrapper"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+      integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--APP-->
+    <div id="app">
+      <div class="top-app"></div>
+      <div class="bottom-app"></div>
+      <!--WRAPPER-->
+      <div class="wrapper">
+
+        <!--LEFT WRAPPER-->
+        <div class="left-wrapper">
+          <!--TOP LEFT WRAPPER-->
+          <div class="top-left-wrapper">
+            <div class="user-name">nome utente</div>
+            <div class="notifications">notifiche messaggi</div>
+            <div class="input">
+              <div class="left-input">search</div>
+              <div class="right-input">input</div>
+            </div>
+          </div>
+          <!--/TOP LEFT WRAPPER-->
+
+          <!--BOTTOM LEFT WRAPPER-->
+          <div class="bottom-left-wrapper">
+            <div class="user">
+              <div class="left-user">left</div>
+              <div class="right-user">
+                <div class="top-right-user clearfix">
+                  <div class="name">michele</div>
+                  <div class="date">14/09/1991</div>
+                </div>
+                <div class="bottom-right-user">
+                  <p>ciao come stai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/BOTTOM LEFT WRAPPER-->
+        </div>
+        <!--/LEFT WRAPPER-->
 
 
+        <!--RIGHT WRAPPER-->
+        <div class="right-wrapper">right wrapper</div>
+        <!--/RIGHT WRAPPER-->
+        
+      </div>
+      <!--/WRAPPER-->
 
 
+    </div>
+    <!--/APP-->
 
 
-
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="js/script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
