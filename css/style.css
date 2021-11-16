@@ -223,20 +223,24 @@ i {
   background-image: url(../img/mine.jpg);
   padding: 50px;
 }
-.sent-message {
-  display: flex;
-  justify-content: flex-end;
-}
 
 .received-message,
-.sent-msg-container {
-  display: flex;
-  justify-content: space-between;
+.sent-message {
   width: 260px;
   height: 45px;
   border-radius: 8px;
-  background-color: white;
   margin-bottom: 10px;
+}
+.sent-message {
+  background-color: #d4f8ba;
+  float: right;
+  clear: both;
+}
+
+.received-message {
+  background-color: white;
+  float: left;
+  clear: left;
 }
 
 .text-msg {
@@ -259,12 +263,6 @@ i {
 }
 .data-msg-received {
   padding-top: 25px;
-}
-.sent-msg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d4f8ba;
 }
 
 .bottom-right-wrapper {

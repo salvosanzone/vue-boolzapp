@@ -130,26 +130,8 @@
           </div>
           <div class="center-right-wrapper">
             <div class="chat">
-
-              <!--SENT MESSAGE-->
-              <!-- <div v-if="activeContact >= 0" class="sent-msg">
-                <div
-                  v-for="(message, index) in contacts[activeContact].messages"
-                  class="sent-message"
-                >
-                  <div class="sent-msg-container">
-                    <div class="text-msg">
-                      <h6>{{message.message}}</h6>
-                    </div>
-                    <div class="data-msg-received">
-                      <p>{{message.date}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-              <!--/SENT MESSAGE-->
-
-              <!--RECEIVED MESSAGE-->
+              
+              <!--MESSAGEs-->
               <div v-if="activeContact >= 0" class="received-msg">
                 <div
                   v-for="(message, index) in contacts[activeContact].messages"
@@ -163,7 +145,8 @@
                   </div>
                 </div>
               </div>
-              <!--RECEIVED MESSAGE-->
+              <!--/MESSAGEs-->
+
             </div>
           </div>
           <div class="bottom-right-wrapper">
