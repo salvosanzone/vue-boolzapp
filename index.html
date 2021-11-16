@@ -79,15 +79,16 @@
               <!--CONTACTS-->
               <div
                 v-for="(contact,index) in contacts"
-               class="user ">
+                @click="showMessages(index)"
+               class="user">
                 <div class="left-user">
-                  <img :src="contact.immagine" alt="">
+                  <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                 </div>
                 <div class="right-user">
                   <div class="top-right-user clearfix">
                     <div class="name">
                       <h6>
-                        {{contact.nome}}
+                        {{contact.name}}
                       </h6>
                     </div>
                     <div class="date">
