@@ -151,12 +151,12 @@
                 <div class="sent-msg-container">
                   <div class="text-msg">
                     <h6>
-                      {{messages.message}}
+                      {{messages[activeContact].message}}
                     </h6>
                   </div>
                   <div class="data-msg-received">
                   <p>
-                    {{messages.date}}
+                    {{messages[activeContact].date}}
                   </p>
                 </div>
                 </div>
@@ -174,12 +174,12 @@
               class="received-message">
                 <div class="text-msg">
                   <h6>
-                    {{messages.message}}
+                    {{messages[activeContact].message}}
                   </h6>
                 </div>
                 <div class="data-msg">
                   <p>
-                    {{messages.date}}
+                    {{messages[activeContact].date}}
                   </p>
                 </div>
               </div>
