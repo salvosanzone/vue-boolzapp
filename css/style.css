@@ -216,17 +216,18 @@ i {
   background-color: #f9f9fa;
   height: calc(100% - 100px);
 }
+/*CHAT*/
 .chat {
-  /*width: 98.8%;*/
   height: 100%;
   overflow-y: scroll;
   background-image: url(../img/mine.jpg);
-  padding: 50px;
+  padding: 70px;
 }
 
 .received-message,
 .sent-message {
-  width: 260px;
+  position: relative;
+  width: 230px;
   height: 45px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -240,29 +241,28 @@ i {
 .received-message {
   background-color: white;
   float: left;
-  clear: left;
+  clear: both;
 }
 
 .text-msg {
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
+ position: absolute;
+ top: 50%;
+ left: 10px;
+ transform: translateY(-50%);
 }
 .data-msg {
-  display: flex;
-  align-items: flex-end;
-  padding-right: 5px;
+  position: absolute;
+  right: 7px;
+  bottom: 3px;
+  
 }
 
 .data-msg p,
 .date p,
 .bottom-right-user p,
 .data-msg-received p {
-  font-size: 10px;
+  font-size: 8px;
   color: lightgray;
-}
-.data-msg-received {
-  padding-top: 25px;
 }
 
 .bottom-right-wrapper {
