@@ -38,9 +38,7 @@
               <div class="detalis">
                 <div class="name-detalis">
                   <h6>
-                    <strong>
-                      Nome Utente
-                    </strong>
+                    <strong> Nome Utente </strong>
                   </h6>
                 </div>
                 <div class="shortcut">
@@ -55,9 +53,7 @@
                 <i class="fas fa-bell-slash"></i>
               </div>
               <div class="right-notifications">
-                <h6>
-                  Ricevi notifiche di nuovi messaggi
-                </h6>
+                <h6>Ricevi notifiche di nuovi messaggi</h6>
                 <p>Attiva notifiche desktop</p>
               </div>
             </div>
@@ -66,7 +62,12 @@
                 <i class="fas fa-search"></i>
               </div>
               <div class="right-input">
-                <input placeholder="Cerca o inizia una nuova chat" type="text" name="" id="">
+                <input
+                  placeholder="Cerca o inizia una nuova chat"
+                  type="text"
+                  name=""
+                  id=""
+                />
               </div>
             </div>
           </div>
@@ -75,37 +76,30 @@
           <!--BOTTOM LEFT WRAPPER-->
           <div class="bottom-left-wrapper">
             <div class="container-user">
-
               <!--CONTACTS-->
               <div
                 v-for="(contact,index) in contacts"
                 @click="showMessages(index)"
-               class="user">
+                class="user"
+              >
                 <div class="left-user">
-                  <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                  <img :src="`img/avatar${contact.avatar}.jpg`" alt="" />
                 </div>
                 <div class="right-user">
                   <div class="top-right-user clearfix">
                     <div class="name">
-                      <h6>
-                        {{contact.name}}
-                      </h6>
+                      <h6>{{contact.name}}</h6>
                     </div>
                     <div class="date">
-                      <p>
-                        10/01/2020 16:15:22
-                      </p>
+                      <p>10/01/2020 16:15:22</p>
                     </div>
                   </div>
                   <div class="bottom-right-user">
-                    <p>
-                      Tutto fatto!..
-                    </p>
+                    <p>Tutto fatto!..</p>
                   </div>
                 </div>
               </div>
               <!--/CONTACTS-->
-
             </div>
           </div>
           <!--/BOTTOM LEFT WRAPPER-->
@@ -117,18 +111,14 @@
           <div class="top-right-wrapper">
             <div class="user-top-right-wrapper">
               <div class="img-user-top-right-wrapper">
-                <img src="img/avatar_1.jpg" alt="">
+                <img src="img/avatar_1.jpg" alt="" />
               </div>
               <div class="info-user-top-right-wrapper">
                 <div class="name-user-top-right">
-                  <h6>
-                    Michele
-                  </h6>
+                  <h6>Michele</h6>
                 </div>
                 <div class="data-user-top-right">
-                  <p>
-                    Ultimo accesso oggi alle 10/01/2020 16:15:22
-                  </p>
+                  <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                 </div>
               </div>
             </div>
@@ -142,51 +132,38 @@
             <div class="chat">
 
               <!--SENT MESSAGE-->
-              <div 
-              v-if="activeContact >= 0"
-              class="sent-msg">
+              <!-- <div v-if="activeContact >= 0" class="sent-msg">
                 <div
-                v-for="(message, index) in contacts[activeContact].messages"
-                class="sent-message">
-                <div class="sent-msg-container">
-                  <div class="text-msg">
-                    <h6>
-                      {{messages[activeContact].message}}
-                    </h6>
+                  v-for="(message, index) in contacts[activeContact].messages"
+                  class="sent-message"
+                >
+                  <div class="sent-msg-container">
+                    <div class="text-msg">
+                      <h6>{{message.message}}</h6>
+                    </div>
+                    <div class="data-msg-received">
+                      <p>{{message.date}}</p>
+                    </div>
                   </div>
-                  <div class="data-msg-received">
-                  <p>
-                    {{messages[activeContact].date}}
-                  </p>
                 </div>
-                </div>
-              </div>
-              </div>
-              
+              </div> -->
               <!--/SENT MESSAGE-->
 
               <!--RECEIVED MESSAGE-->
-              <div 
-              v-if="activeContact >= 0"
-              class="received-msg">
+              <div v-if="activeContact >= 0" class="received-msg">
                 <div
-              v-for="(message, index) in contacts[activeContact].messages"
-              class="received-message">
-                <div class="text-msg">
-                  <h6>
-                    {{messages[activeContact].message}}
-                  </h6>
-                </div>
-                <div class="data-msg">
-                  <p>
-                    {{messages[activeContact].date}}
-                  </p>
+                  v-for="(message, index) in contacts[activeContact].messages"
+                  :class="`${message.status}-message`"
+                >
+                  <div class="text-msg">
+                    <h6>{{message.message}}</h6>
+                  </div>
+                  <div class="data-msg">
+                    <p>{{message.dat}}</p>
+                  </div>
                 </div>
               </div>
-              </div>
-              
               <!--RECEIVED MESSAGE-->
-
             </div>
           </div>
           <div class="bottom-right-wrapper">
@@ -194,7 +171,7 @@
               <i class="far fa-smile"></i>
             </div>
             <div class="center-bottom-right-wrapper">
-              <input placeholder="Scrivi un messaggio" type="text">
+              <input placeholder="Scrivi un messaggio" type="text" />
             </div>
             <div class="right-bottom-right-wrapper">
               <i class="fas fa-microphone"></i>
