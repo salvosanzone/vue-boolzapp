@@ -142,9 +142,13 @@
             <div class="chat">
 
               <!--SENT MESSAGE-->
-              <div class="sent-message">
+              <div
+              v-for="(message, index) in contacts[activeContact].messages"
+              class="sent-message">
                 <div class="sent-msg-container">
-                  <div class="text-msg">
+                  <div 
+                  v-if="activeContact >= 0"
+                  class="text-msg">
                     <h6>
                       Hai portato a spasso il cane?
                     </h6>
@@ -157,21 +161,6 @@
                 </div>
               </div>
               <!--/SENT MESSAGE-->
-
-              <div class="sent-message">
-                <div class="sent-msg-container">
-                  <div class="text-msg">
-                    <h6>
-                      Ricordati di dargli da mangiare
-                    </h6>
-                  </div>
-                  <div class="data-msg-received">
-                  <p>
-                    10/01/2020 16:15:22
-                  </p>
-                </div>
-                </div>
-              </div>
 
               <!--RECEIVED MESSAGE-->
               <div class="received-message">

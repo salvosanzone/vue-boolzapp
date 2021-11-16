@@ -110,6 +110,7 @@ const app = new Vue({
     //creo una funzione in cui do come parametro d'ingresso index
     showMessages(index){
       console.log('contatto numero:', index);
+      this.activeContact = index;
     },
 
 
