@@ -142,20 +142,16 @@
             <div class="chat">
 
               <!--SENT MESSAGE-->
-              <div
-              v-for="(message, index) in contacts[activeContact].messages"
-              class="sent-message">
+              <div class="sent-message">
                 <div class="sent-msg-container">
-                  <div 
-                  v-if="activeContact >= 0"
-                  class="text-msg">
+                  <div class="text-msg">
                     <h6>
-                      Hai portato a spasso il cane?
+                      message
                     </h6>
                   </div>
                   <div class="data-msg-received">
                   <p>
-                    10/01/2020 16:15:22
+                    date
                   </p>
                 </div>
                 </div>
@@ -163,15 +159,19 @@
               <!--/SENT MESSAGE-->
 
               <!--RECEIVED MESSAGE-->
-              <div class="received-message">
+              <div
+              v-for="(message, index) in contacts[activeContact].messages"
+              class="received-message">
                 <div class="text-msg">
-                  <h6>
-                    Tutto fatto!
+                  <h6
+                  v-if="activeContact >= 0"
+                  >
+                    {{messages.message}}
                   </h6>
                 </div>
                 <div class="data-msg">
                   <p>
-                    10/01/2020 16:15:22
+                    {{messages.date}}
                   </p>
                 </div>
               </div>
