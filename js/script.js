@@ -26,7 +26,9 @@ const app = new Vue({
 
   data:{
 
-    
+    user: {
+        name: 'Salvo',
+    },
     //creo un array di oggetti
     contacts: [
 
@@ -114,6 +116,8 @@ const app = new Vue({
   activeContact: -1,
 
   newMessage: '',
+
+
 
   },
 

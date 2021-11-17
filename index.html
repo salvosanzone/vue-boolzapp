@@ -111,6 +111,22 @@
         <div class="right-wrapper">
           <div class="top-right-wrapper">
             <div
+            v-if="activeContact === -1"
+            class="user-top-right-wrapper">
+              <div 
+              class="img-user-top-right-wrapper">
+                <img src="img/avatar_1.jpg" alt="">
+              </div>
+              <div class="info-user-top-right-wrapper">
+                <div class="name-user-top-right">
+                  <h6>Michele</h6>
+                </div>
+                <div class="data-user-top-right">
+                  <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+                </div>
+              </div>
+            </div>
+            <div
             v-if="activeContact >= 0"
             class="user-top-right-wrapper">
               <div 
