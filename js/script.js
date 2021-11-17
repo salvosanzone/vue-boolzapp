@@ -157,7 +157,11 @@ const app = new Vue({
     receivedNewMessage(){
         //creo una funzione che tramite ad una timing function al suo interno invia dopo un 1s un messaggio
         setTimeout(() => {
-            
+            this.contacts[this.activeContact].messages.push({
+                date: '10/01/2020 15:30:55',
+                message: 'okay',
+                status: 'received'
+            });
         }, 1000);
 
     }
