@@ -110,8 +110,20 @@ const app = new Vue({
     //creo una funzione in cui do come parametro d'ingresso index
     showMessages(index){
       console.log('contatto numero:', index);
+      //questa condizione avrei potuta scriverla direttamente nel click
       this.activeContact = index;
     },
+
+    //creo una funzione che mi permetta di visualizzare l'ultimo messaggio del contatto
+    showLastMessage(index){
+         let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+        
+        return lastMessage;
+
+        //mi puo servire come fosse un console log quando dentro la funzione non ho scritto ancora nulla 
+        //return 'lastMessage';
+    }
+ 
 
 
 

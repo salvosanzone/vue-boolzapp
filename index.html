@@ -80,6 +80,7 @@
               <div
                 v-for="(contact,index) in contacts"
                 @click="showMessages(index)"
+                :class="{'active': activeContact === index}"
                 class="user"
               >
                 <div class="left-user">
@@ -95,7 +96,7 @@
                     </div>
                   </div>
                   <div class="bottom-right-user">
-                    <p>Tutto fatto!..</p>
+                    <p>{{showLastMessage(index)}}</p>
                   </div>
                 </div>
               </div>
@@ -109,13 +110,15 @@
         <!--RIGHT WRAPPER-->
         <div class="right-wrapper">
           <div class="top-right-wrapper">
-            <div class="user-top-right-wrapper">
+            <div
+            v-if="activeContact >= 0"
+            class="user-top-right-wrapper">
               <div class="img-user-top-right-wrapper">
-                <img src="img/avatar_1.jpg" alt="" />
+                <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="" />
               </div>
               <div class="info-user-top-right-wrapper">
                 <div class="name-user-top-right">
-                  <h6>Michele</h6>
+                  <h6>{{contacts[activeContact].name}}</h6>
                 </div>
                 <div class="data-user-top-right">
                   <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
@@ -131,7 +134,7 @@
           <div class="center-right-wrapper">
             <div class="chat">
 
-              <!--MESSAGEs-->
+              <!--MESSAGES-->
               <div v-if="activeContact >= 0" class="received-msg">
                 <div
                   v-for="(message, index) in contacts[activeContact].messages"

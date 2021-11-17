@@ -157,7 +157,7 @@ i {
   cursor: pointer;
 }
 .user.active {
-  background-color: lightgray;
+  background-color: #e8eaeb;
 }
 .left-user {
   width: 13%;
