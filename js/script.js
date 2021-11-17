@@ -11,6 +11,12 @@ Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare 
 Click sul contatto mostra la conversazione del contatto cliccato (e seleziona il contatto come “attivo”)
 */
 
+/*
+Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+*/
+
 
 const app = new Vue({
 
@@ -19,8 +25,11 @@ const app = new Vue({
 
 
   data:{
+
+    
     //creo un array di oggetti
     contacts: [
+
       {
           name: 'Michele',
           avatar: '_1',
@@ -129,18 +138,28 @@ const app = new Vue({
         //return 'lastMessage';
     },
 
-    //creo una funzione legata al click dell'input che mi aggiunge un nuovo messaggio
-    /*
-    creo una proprità newMessage il cui valore è una stringa vuota
-    questa stringa vuota verrà riempita aggiungendo un v-model all'input
-    creo una funzione che prenderà come parametro la stringa vuota!?? e successivamente verrà pushata all'interno dell'array di messaggi
-    */
-
+    
     sendMessage(){
-        contacts[this.activeContact].messages[contacts[this.activeContact]].message.push(this.newMessage);
+        // creo una funzione che pusha all'interno dell'array di messaggi una proprietà vuota collegata al v-model 
+        this.contacts[this.activeContact].messages.push({
+            date: '10/01/2020 15:30:55',
+            message: this.newMessage,
+            status: 'sent'
+        });
 
-        //resetto l'input
+        //resetto l'input 
         this.newMessage = '';
+
+        this.receivedNewMessage();
+    },
+
+    
+    receivedNewMessage(){
+        //creo una funzione che tramite ad una timing function al suo interno invia dopo un 1s un messaggio
+        setTimeout(() => {
+            
+        }, 1000);
+
     }
  
 
