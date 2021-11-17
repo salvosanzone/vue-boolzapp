@@ -117,6 +117,9 @@ const app = new Vue({
     //creo una funzione che mi permetta di visualizzare l'ultimo messaggio del contatto
     showLastMessage(index){
          let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+         if(lastMessage.length > 30){
+             lastMessage = lastMessage.substr(0,30)+'...';
+         }
         
         return lastMessage;
 
