@@ -102,7 +102,9 @@ const app = new Vue({
       },
   ],
 
-  activeContact: -1 
+  activeContact: -1,
+
+  newMessage: '',
 
   },
 
@@ -125,6 +127,20 @@ const app = new Vue({
 
         //mi puo servire come fosse un console log quando dentro la funzione non ho scritto ancora nulla 
         //return 'lastMessage';
+    },
+
+    //creo una funzione legata al click dell'input che mi aggiunge un nuovo messaggio
+    /*
+    creo una proprità newMessage il cui valore è una stringa vuota
+    questa stringa vuota verrà riempita aggiungendo un v-model all'input
+    creo una funzione che prenderà come parametro la stringa vuota!?? e successivamente verrà pushata all'interno dell'array di messaggi
+    */
+
+    sendMessage(){
+        contacts[this.activeContact].messages[contacts[this.activeContact]].message.push(this.newMessage);
+
+        //resetto l'input
+        this.newMessage = '';
     }
  
 

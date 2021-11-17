@@ -152,17 +152,24 @@
 
             </div>
           </div>
+
+          <!--INPUT-->
           <div class="bottom-right-wrapper">
             <div class="left-bottom-right-wrapper">
               <i class="far fa-smile"></i>
             </div>
             <div class="center-bottom-right-wrapper">
-              <input placeholder="Scrivi un messaggio" type="text" />
+              <input
+              v-model="newMessage"
+              @keyup.enter="sendMessage"
+              placeholder="Scrivi un messaggio" type="text" />
             </div>
             <div class="right-bottom-right-wrapper">
               <i class="fas fa-microphone"></i>
             </div>
           </div>
+          <!--/INPUT-->
+
         </div>
         <!--/RIGHT WRAPPER-->
       </div>
