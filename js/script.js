@@ -145,14 +145,17 @@ const app = new Vue({
     
     sendMessage(){
         // creo una funzione che pusha all'interno dell'array di messaggi una proprietà vuota collegata al v-model 
-        this.contacts[this.activeContact].messages.push({
+        if(this.newMessage.length > 0){
+           this.contacts[this.activeContact].messages.push({
             date: '10/01/2020 15:30:55',
             message: this.newMessage,
             status: 'sent'
         });
 
         //resetto l'input 
-        this.newMessage = '';
+        this.newMessage = ''; 
+        }
+        
 
         this.receivedNewMessage();
     },

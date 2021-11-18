@@ -110,12 +110,9 @@
         <!--RIGHT WRAPPER-->
         <div class="right-wrapper">
           <div class="top-right-wrapper">
-            <div
-            v-if="activeContact === -1"
-            class="user-top-right-wrapper">
-              <div 
-              class="img-user-top-right-wrapper">
-                <img src="img/avatar_1.jpg" alt="">
+            <div v-if="activeContact === -1" class="user-top-right-wrapper">
+              <div class="img-user-top-right-wrapper">
+                <img src="img/avatar_1.jpg" alt="" />
               </div>
               <div class="info-user-top-right-wrapper">
                 <div class="name-user-top-right">
@@ -126,12 +123,12 @@
                 </div>
               </div>
             </div>
-            <div
-            v-if="activeContact >= 0"
-            class="user-top-right-wrapper">
-              <div 
-              class="img-user-top-right-wrapper">
-                <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="" />
+            <div v-if="activeContact >= 0" class="user-top-right-wrapper">
+              <div class="img-user-top-right-wrapper">
+                <img
+                  :src="`img/avatar${contacts[activeContact].avatar}.jpg`"
+                  alt=""
+                />
               </div>
               <div class="info-user-top-right-wrapper">
                 <div class="name-user-top-right">
@@ -150,7 +147,6 @@
           </div>
           <div class="center-right-wrapper">
             <div class="chat">
-
               <!--MESSAGES-->
               <div v-if="activeContact >= 0" class="received-msg">
                 <div
@@ -166,28 +162,28 @@
                 </div>
               </div>
               <!--/MESSAGEs-->
-
             </div>
-          </div> 
+          </div>
 
           <!--INPUT-->
-          <div class="bottom-right-wrapper">
+          <div 
+          v-if="activeContact >= 0" class="bottom-right-wrapper">
             <div class="left-bottom-right-wrapper">
               <i class="far fa-smile"></i>
             </div>
-            <div 
-            class="center-bottom-right-wrapper">
+            <div class="center-bottom-right-wrapper">
               <input
-              v-model="newMessage"
-              @keyup.enter="sendMessage"
-              placeholder="Scrivi un messaggio" type="text" />
+                v-model="newMessage"
+                @keyup.enter="sendMessage"
+                placeholder="Scrivi un messaggio"
+                type="text"
+              />
             </div>
             <div class="right-bottom-right-wrapper">
               <i class="fas fa-microphone"></i>
             </div>
           </div>
           <!--/INPUT-->
-
         </div>
         <!--/RIGHT WRAPPER-->
       </div>
