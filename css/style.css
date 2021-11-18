@@ -188,6 +188,11 @@ i {
   padding: 5px;
 }
 
+#no-user{
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+}
+
 .img-user-top-right-wrapper,
 .info-user-top-right-wrapper {
   display: inline-block;

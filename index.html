@@ -114,21 +114,8 @@
         <!-- RIGHT WRAPPER -->
         <div class="right-wrapper">
           <div class="top-right-wrapper">
-            <div 
-            class="user-top-right-wrapper"
-            v-if="activeContact === -1">
-              <div class="img-user-top-right-wrapper">
-                <img src="img/avatar_1.jpg" alt="" />
-              </div>
-              <div class="info-user-top-right-wrapper">
-                <div class="name-user-top-right">
-                  <h6>Michele</h6>
-                </div>
-                <div class="data-user-top-right">
-                  <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
-                </div>
-              </div>
-            </div>
+
+            <!-- RIGHT WRAPPER ACTIVE -->
             <div 
             class="user-top-right-wrapper"
             v-if="activeContact >= 0">
@@ -146,6 +133,26 @@
                 </div>
               </div>
             </div>
+            <!-- /RIGHT WRAPPER ACTIVE -->
+            
+            <!-- DEFAULT RIGHT WRAPPER -->
+            <div 
+            class="user-top-right-wrapper"
+            v-else="activeContact === -1">
+              <div class="img-user-top-right-wrapper">
+                <i id="no-user" class="far fa-user"></i>
+              </div>
+              <div class="info-user-top-right-wrapper">
+                <div class="name-user-top-right">
+                  <h6></h6>
+                </div>
+                <div class="data-user-top-right">
+                  <p></p>
+                </div>
+              </div>
+            </div> 
+            <!-- /DEFAULT RIGHT WRAPPER -->
+
             <div class="detalis-top-right-wrapper">
               <i class="fas fa-search"></i>
               <i class="fas fa-paperclip"></i>
@@ -175,7 +182,7 @@
             </div>
           </div>
 
-          <!--INPUT-->
+          <!-- INPUT KEYBOARD -->
           <div 
           class="bottom-right-wrapper"
           v-if="activeContact >= 0">
@@ -194,7 +201,7 @@
               <i class="fas fa-microphone"></i>
             </div>
           </div>
-          <!-- /INPUT -->
+          <!-- /INPUT KEYBOARD-->
 
         </div>
         <!-- /RIGHT WRAPPE -->

@@ -159,9 +159,9 @@ const app = new Vue({
 
         //resetto l'input
         this.newMessage = "";
+        this.receivedNewMessage();
       }
 
-      this.receivedNewMessage();
     },
 
     receivedNewMessage() {
