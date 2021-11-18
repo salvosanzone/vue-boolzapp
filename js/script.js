@@ -22,11 +22,8 @@ Milestone 4
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 */
 
-
-//sintassi per estendere i plugin 
+//sintassi per estendere i plugin
 dayjs.extend(window.dayjs_plugin_customParseFormat);
-
-
 
 const app = new Vue({
   el: "#app",
@@ -151,12 +148,14 @@ const app = new Vue({
 
     sendMessage() {
       // creo una funzione che pusha all'interno dell'array di messaggi una proprietà vuota collegata al v-model
+      const newMsgObj = {
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        message: this.newMessage,
+        status: "sent",
+      };
+
       if (this.newMessage.length > 0) {
-        this.contacts[this.activeContact].messages.push({
-          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-          message: this.newMessage,
-          status: "sent",
-        });
+        this.contacts[this.activeContact].messages.push(newMsgObj);
 
         //resetto l'input
         this.newMessage = "";
@@ -169,7 +168,7 @@ const app = new Vue({
       //creo una funzione che tramite ad una timing function al suo interno invia dopo un 1s un messaggio
       setTimeout(() => {
         this.contacts[this.activeContact].messages.push({
-          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
           message: "okay",
           status: "received",
         });
