@@ -17,6 +17,10 @@ Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitan
 Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 */
 
+/*
+Milestone 4
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+*/
 
 const app = new Vue({
 
@@ -26,9 +30,6 @@ const app = new Vue({
 
   data:{
 
-    user: {
-        name: 'Salvo',
-    },
     //creo un array di oggetti
     contacts: [
 
@@ -117,6 +118,8 @@ const app = new Vue({
 
   newMessage: '',
 
+  searchContact: '',
+
 
 
   },
@@ -150,11 +153,14 @@ const app = new Vue({
             date: '10/01/2020 15:30:55',
             message: this.newMessage,
             status: 'sent'
+            
+            
         });
 
         //resetto l'input 
         this.newMessage = ''; 
         }
+
         
 
         this.receivedNewMessage();
@@ -171,9 +177,38 @@ const app = new Vue({
             });
         }, 1000);
 
-    }
- 
+    },
 
+
+    findContact(){
+
+        console.log(this.searchContact);
+        this.contacts.forEach((contact)=>{
+
+            console.log(contact);
+
+            if(contact.name.includes(this.searchContact)){
+                contact.visible = true;
+            }else{
+                contact.visible = false;
+            }
+
+        })
+
+        
+    }
+
+
+
+/*
+credo un data vuoto collegato al v-model dove andrò a scrivere il nome del contatto che sto cercando 
+
+
+credo un array!? in cui inserisco tutti i nomi dei contatti
+
+creo una funzione che verifichi tramite includes se il nome che ho scritto (che si troverà adesso all'interno del data precedentemente creato) è presente nell'array di nomi
+
+*/
 
 
 
@@ -181,3 +216,21 @@ const app = new Vue({
 
 
 })
+
+
+
+
+/*
+
+
+
+
+credo un data vuoto collegato al v-model dove andrò a scrivere il nome del contatto che sto cercando 
+
+
+credo un array!? in cui inserisco tutti i nomi dei contatti
+
+creo una funzione che verifichi tramite includes se il nome che ho scritto (che si troverà adesso all'interno del data precedentemente creato) è presente nell'array di nomi
+
+
+*/

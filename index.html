@@ -63,6 +63,8 @@
               </div>
               <div class="right-input">
                 <input
+                  v-model="searchContact"
+                  @keyup="findContact"
                   placeholder="Cerca o inizia una nuova chat"
                   type="text"
                   name=""
@@ -78,7 +80,8 @@
             <div class="container-user">
               <!--CONTACTS-->
               <div
-                v-for="(contact,index) in contacts"
+               v-for="(contact,index) in contacts"
+                v-if="contact.visible === true"
                 @click="showMessages(index)"
                 :class="{'active': activeContact === index}"
                 class="user"
@@ -166,8 +169,7 @@
           </div>
 
           <!--INPUT-->
-          <div 
-          v-if="activeContact >= 0" class="bottom-right-wrapper">
+          <div v-if="activeContact >= 0" class="bottom-right-wrapper">
             <div class="left-bottom-right-wrapper">
               <i class="far fa-smile"></i>
             </div>
