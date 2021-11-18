@@ -21,15 +21,15 @@
     <title>Document</title>
   </head>
   <body>
-    <!--APP-->
+    <!-- APP -->
     <div id="app">
       <div class="top-app"></div>
       <div class="bottom-app"></div>
-      <!--WRAPPER-->
+      <!-- WRAPPER -->
       <div class="wrapper">
-        <!--LEFT WRAPPER-->
+        <!-- LEFT WRAPPER -->
         <div class="left-wrapper">
-          <!--TOP LEFT WRAPPER-->
+          <!-- TOP LEFT WRAPPER -->
           <div class="top-left-wrapper">
             <div class="user-name clearfix">
               <div class="image-user">
@@ -73,19 +73,19 @@
               </div>
             </div>
           </div>
-          <!--/TOP LEFT WRAPPER-->
+          <!-- /TOP LEFT WRAPPER -->
 
-          <!--BOTTOM LEFT WRAPPER-->
+          <!-- BOTTOM LEFT WRAPPER -->
           <div class="bottom-left-wrapper">
             <div class="container-user">
-              <!--CONTACTS-->
+
+              <!-- CONTACTS -->
               <div
                 v-for="(contact,index) in contacts"
                 v-if="contact.visible === true"
                 @click="showMessages(index)"
                 :class="{'active': activeContact === index}"
-                class="user"
-              >
+                class="user">
                 <div class="left-user">
                   <img :src="`img/avatar${contact.avatar}.jpg`" alt="" />
                 </div>
@@ -103,17 +103,20 @@
                   </div>
                 </div>
               </div>
-              <!--/CONTACTS-->
+              <!-- /CONTACTS -->
+
             </div>
           </div>
-          <!--/BOTTOM LEFT WRAPPER-->
+          <!-- /BOTTOM LEFT WRAPPER -->
         </div>
-        <!--/LEFT WRAPPER-->
+        <!-- /LEFT WRAPPER -->
 
-        <!--RIGHT WRAPPER-->
+        <!-- RIGHT WRAPPER -->
         <div class="right-wrapper">
           <div class="top-right-wrapper">
-            <div v-if="activeContact === -1" class="user-top-right-wrapper">
+            <div 
+            class="user-top-right-wrapper"
+            v-if="activeContact === -1">
               <div class="img-user-top-right-wrapper">
                 <img src="img/avatar_1.jpg" alt="" />
               </div>
@@ -126,12 +129,13 @@
                 </div>
               </div>
             </div>
-            <div v-if="activeContact >= 0" class="user-top-right-wrapper">
+            <div 
+            class="user-top-right-wrapper"
+            v-if="activeContact >= 0">
               <div class="img-user-top-right-wrapper">
                 <img
                   :src="`img/avatar${contacts[activeContact].avatar}.jpg`"
-                  alt=""
-                />
+                  alt=""/>
               </div>
               <div class="info-user-top-right-wrapper">
                 <div class="name-user-top-right">
@@ -150,12 +154,14 @@
           </div>
           <div class="center-right-wrapper">
             <div class="chat">
-              <!--MESSAGES-->
-              <div v-if="activeContact >= 0" class="received-msg">
-                <div
-                  v-for="(message, index) in contacts[activeContact].messages"
-                  :class="`${message.status}-message`"
-                >
+
+              <!-- MESSAGES -->
+              <div 
+              class="received-msg"
+              v-if="activeContact >= 0">
+                <div 
+                v-for="(message, index) in contacts[activeContact].messages"
+                :class="`${message.status}-message`">
                   <div class="text-msg">
                     <h6>{{message.message}}</h6>
                   </div>
@@ -164,12 +170,15 @@
                   </div>
                 </div>
               </div>
-              <!--/MESSAGEs-->
+              <!-- /MESSAGEs -->
+
             </div>
           </div>
 
           <!--INPUT-->
-          <div v-if="activeContact >= 0" class="bottom-right-wrapper">
+          <div 
+          class="bottom-right-wrapper"
+          v-if="activeContact >= 0">
             <div class="left-bottom-right-wrapper">
               <i class="far fa-smile"></i>
             </div>
@@ -185,13 +194,14 @@
               <i class="fas fa-microphone"></i>
             </div>
           </div>
-          <!--/INPUT-->
+          <!-- /INPUT -->
+
         </div>
-        <!--/RIGHT WRAPPER-->
+        <!-- /RIGHT WRAPPE -->
       </div>
-      <!--/WRAPPER-->
+      <!-- /WRAPPER -->
     </div>
-    <!--/APP-->
+    <!-- /APP -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- DAY JS - CORE -->
