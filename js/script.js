@@ -22,215 +22,173 @@ Milestone 4
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 */
 
+
+//sintassi per estendere i plugin 
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
+
+
 const app = new Vue({
+  el: "#app",
 
-
-  el: '#app',
-
-
-  data:{
-
+  data: {
     //creo un array di oggetti
     contacts: [
-
       {
-          name: 'Michele',
-          avatar: '_1',
-          visible: true,
-          messages: [{
-              date: '10/01/2020 15:30:55',
-              message: 'Hai portato a spasso il cane?',
-              status: 'sent'
+        name: "Michele",
+        avatar: "_1",
+        visible: true,
+        messages: [
+          {
+            date: "10/01/2020 15:30:55",
+            message: "Hai portato a spasso il cane?",
+            status: "sent",
           },
-              {
-                  date: '10/01/2020 15:50:00',
-                  message: 'Ricordati di dargli da mangiare',
-                  status: 'sent'
-              },
-              {
-                  date: '10/01/2020 16:15:22',
-                  message: 'Tutto fatto!',
-                  status: 'received'
-              }
-          ],
+          {
+            date: "10/01/2020 15:50:00",
+            message: "Ricordati di dargli da mangiare",
+            status: "sent",
+          },
+          {
+            date: "10/01/2020 16:15:22",
+            message: "Tutto fatto!",
+            status: "received",
+          },
+        ],
       },
       {
-          name: 'Fabio',
-          avatar: '_2',
-          visible: true,
-          messages: [{
-              date: '20/03/2020 16:30:00',
-              message: 'Ciao come stai?',
-              status: 'sent'
+        name: "Fabio",
+        avatar: "_2",
+        visible: true,
+        messages: [
+          {
+            date: "20/03/2020 16:30:00",
+            message: "Ciao come stai?",
+            status: "sent",
           },
-              {
-                  date: '20/03/2020 16:30:55',
-                  message: 'Bene grazie! Stasera ci vediamo?',
-                  status: 'received'
-              },
-              {
-                  date: '20/03/2020 16:35:00',
-                  message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                  status: 'received'
-              }
-          ],
+          {
+            date: "20/03/2020 16:30:55",
+            message: "Bene grazie! Stasera ci vediamo?",
+            status: "received",
+          },
+          {
+            date: "20/03/2020 16:35:00",
+            message: "Mi piacerebbe ma devo andare a fare la spesa.",
+            status: "received",
+          },
+        ],
       },
       {
-          name: 'Samuele',
-          avatar: '_3',
-          visible: true,
-          messages: [{
-              date: '28/03/2020 10:10:40',
-              message: 'La Marianna va in campagna',
-              status: 'received'
+        name: "Samuele",
+        avatar: "_3",
+        visible: true,
+        messages: [
+          {
+            date: "28/03/2020 10:10:40",
+            message: "La Marianna va in campagna",
+            status: "received",
           },
-              {
-                  date: '28/03/2020 10:20:10',
-                  message: 'Sicuro di non aver sbagliato chat?',
-                  status: 'sent'
-              },
-              {
-                  date: '28/03/2020 16:15:22',
-                  message: 'Ah scusa!',
-                  status: 'received'
-              }
-          ],
+          {
+            date: "28/03/2020 10:20:10",
+            message: "Sicuro di non aver sbagliato chat?",
+            status: "sent",
+          },
+          {
+            date: "28/03/2020 16:15:22",
+            message: "Ah scusa!",
+            status: "received",
+          },
+        ],
       },
       {
-          name: 'Luisa',
-          avatar: '_4',
-          visible: true,
-          messages: [{
-              date: '10/01/2020 15:30:55',
-              message: 'Lo sai che ha aperto una nuova pizzeria?',
-              status: 'sent'
+        name: "Luisa",
+        avatar: "_4",
+        visible: true,
+        messages: [
+          {
+            date: "10/01/2020 15:30:55",
+            message: "Lo sai che ha aperto una nuova pizzeria?",
+            status: "sent",
           },
-              {
-                  date: '10/01/2020 15:50:00',
-                  message: 'Si, ma preferirei andare al cinema',
-                  status: 'received'
-              }
-          ],
+          {
+            date: "10/01/2020 15:50:00",
+            message: "Si, ma preferirei andare al cinema",
+            status: "received",
+          },
+        ],
       },
-  ],
+    ],
 
-  activeContact: -1,
+    activeContact: -1,
 
-  newMessage: '',
+    newMessage: "",
 
-  searchContact: '',
-
-
-
+    searchContact: "",
   },
 
-  methods:{
+  methods: {
     //creo una funzione in cui do come parametro d'ingresso index
-    showMessages(index){
-      console.log('contatto numero:', index);
+    showMessages(index) {
+      console.log("contatto numero:", index);
       //questa condizione avrei potuta scriverla direttamente nel click
       this.activeContact = index;
     },
 
     //creo una funzione che mi permetta di visualizzare l'ultimo messaggio del contatto
-    showLastMessage(index){
-         let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
-         if(lastMessage.length > 30){
-             lastMessage = lastMessage.substr(0,30)+'...';
-         }
-        
-        return lastMessage;
+    showLastMessage(index) {
+      let lastMessage =
+        this.contacts[index].messages[this.contacts[index].messages.length - 1]
+          .message;
+      if (lastMessage.length > 30) {
+        lastMessage = lastMessage.substr(0, 30) + "...";
+      }
 
-        //mi puo servire come fosse un console log quando dentro la funzione non ho scritto ancora nulla 
-        //return 'lastMessage';
+      return lastMessage;
+
+      //mi puo servire come fosse un console log quando dentro la funzione non ho scritto ancora nulla
+      //return 'lastMessage';
     },
 
-    
-    sendMessage(){
-        // creo una funzione che pusha all'interno dell'array di messaggi una proprietà vuota collegata al v-model 
-        if(this.newMessage.length > 0){
-           this.contacts[this.activeContact].messages.push({
-            date: '10/01/2020 15:30:55',
-            message: this.newMessage,
-            status: 'sent'
-            
-            
+    sendMessage() {
+      // creo una funzione che pusha all'interno dell'array di messaggi una proprietà vuota collegata al v-model
+      if (this.newMessage.length > 0) {
+        this.contacts[this.activeContact].messages.push({
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          message: this.newMessage,
+          status: "sent",
         });
 
-        //resetto l'input 
-        this.newMessage = ''; 
+        //resetto l'input
+        this.newMessage = "";
+      }
+
+      this.receivedNewMessage();
+    },
+
+    receivedNewMessage() {
+      //creo una funzione che tramite ad una timing function al suo interno invia dopo un 1s un messaggio
+      setTimeout(() => {
+        this.contacts[this.activeContact].messages.push({
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          message: "okay",
+          status: "received",
+        });
+      }, 1000);
+    },
+
+    findContact() {
+      //console.log(this.searchContact);
+
+      this.contacts.forEach((contact) => {
+        //console.log(contact);
+
+        //condizione che verifica la presenza,di cio che scrivo nell'input, tra i nomi dei contatti
+        if (contact.name.includes(this.searchContact)) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
         }
-
-        
-
-        this.receivedNewMessage();
+      });
     },
-
-    
-    receivedNewMessage(){
-        //creo una funzione che tramite ad una timing function al suo interno invia dopo un 1s un messaggio
-        setTimeout(() => {
-            this.contacts[this.activeContact].messages.push({
-                date: '10/01/2020 15:30:55',
-                message: 'okay',
-                status: 'received'
-            });
-        }, 1000);
-
-    },
-
-
-    findContact(){
-
-        console.log(this.searchContact);
-        this.contacts.forEach((contact)=>{
-
-            console.log(contact);
-
-            if(contact.name.includes(this.searchContact)){
-                contact.visible = true;
-            }else{
-                contact.visible = false;
-            }
-
-        })
-
-        
-    }
-
-
-
-/*
-credo un data vuoto collegato al v-model dove andrò a scrivere il nome del contatto che sto cercando 
-
-
-credo un array!? in cui inserisco tutti i nomi dei contatti
-
-creo una funzione che verifichi tramite includes se il nome che ho scritto (che si troverà adesso all'interno del data precedentemente creato) è presente nell'array di nomi
-
-*/
-
-
-
-  }
-
-
-})
-
-
-
-
-/*
-
-
-
-
-credo un data vuoto collegato al v-model dove andrò a scrivere il nome del contatto che sto cercando 
-
-
-credo un array!? in cui inserisco tutti i nomi dei contatti
-
-creo una funzione che verifichi tramite includes se il nome che ho scritto (che si troverà adesso all'interno del data precedentemente creato) è presente nell'array di nomi
-
-
-*/
+  },
+});

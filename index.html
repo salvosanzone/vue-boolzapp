@@ -80,7 +80,7 @@
             <div class="container-user">
               <!--CONTACTS-->
               <div
-               v-for="(contact,index) in contacts"
+                v-for="(contact,index) in contacts"
                 v-if="contact.visible === true"
                 @click="showMessages(index)"
                 :class="{'active': activeContact === index}"
@@ -194,6 +194,10 @@
     <!--/APP-->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- DAY JS - CORE -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <!-- DAY JS - PLUGIN -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/customParseFormat.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
