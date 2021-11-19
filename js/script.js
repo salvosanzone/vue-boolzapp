@@ -123,6 +123,8 @@ const app = new Vue({
     searchContact: "",
   },
 
+
+
   methods: {
     //creo una funzione in cui do come parametro d'ingresso index
     showMessages(index) {
@@ -182,7 +184,7 @@ const app = new Vue({
         //console.log(contact);
 
         //condizione che verifica la presenza,di cio che scrivo nell'input, tra i nomi dei contatti
-        if (contact.name.includes(this.searchContact)) {
+        if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
           contact.visible = true;
         } else {
           contact.visible = false;

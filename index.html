@@ -82,8 +82,8 @@
               <!-- CONTACTS -->
               <div
                 v-for="(contact,index) in contacts"
-                v-if="contact.visible === true"
                 @click="showMessages(index)"
+                v-if="contact.visible === true"
                 :class="{'active': activeContact === index}"
                 class="user">
                 <div class="left-user">
@@ -141,14 +141,6 @@
             v-else="activeContact === -1">
               <div class="img-user-top-right-wrapper">
                 <i id="no-user" class="far fa-user"></i>
-              </div>
-              <div class="info-user-top-right-wrapper">
-                <div class="name-user-top-right">
-                  <h6></h6>
-                </div>
-                <div class="data-user-top-right">
-                  <p></p>
-                </div>
               </div>
             </div> 
             <!-- /DEFAULT RIGHT WRAPPER -->
